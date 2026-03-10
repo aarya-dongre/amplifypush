@@ -1,9 +1,10 @@
 body {
     background-color: aqua;
-    align-content: center;
 }
 
 h1 {
     color: #333;
+    align-content: center;
 }
+
 
