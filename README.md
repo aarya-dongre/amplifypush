@@ -19,4 +19,6 @@ Practical 9:   “docker-compose.yml” > services:  zookeeper:    image: conflu
 
 Practical 10:  minikube start –driver=docker > kubectl get nodes > kubectl create namespace argocd > kubectl apply -n argcd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml > kubectl get pods > new terminal > kubectl port-forward svc/argocd-server -n argcd 8080:443 --address 0.0.0.0 > back to old terminal > [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl -n argcd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) > localhost 8080 
 
+Assignment: index.html make > Dockerfile > FROM ubuntu:22.04 RUN apt-get update && \ apt-get install -y apache2 git && \ apt-get clean COPY index.html /var/www/html/index.html EXPOSE 80 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"] > cmd > docker build -t ubuntu-apache-git . > docker run -d -p 8080:80 --name myweb ubuntu-apache-git > localhost jaao
+
 kubectl create deployment my-app --image=prac6
